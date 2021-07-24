@@ -6,14 +6,12 @@ def rearrange_name(name):
     result = re.search(r"^([\w \.-]*), ([\w \.-]*)", name)
     return name if not result else f"{result[2]} {result[1]}"
 
-
 # Fictional name list which consists of
 # - names in reversed order
 # - single-word names
 # - names with abbreviated middle names
 # - names with one middle name
 # - names with more than one middle name
-
 
 name_list = [
     "Hodson, Lauren K.",
