@@ -1,7 +1,7 @@
 import re
 
 
-def rearrange_name(name):
+def rearrange_name(name: str) -> str:
     # Add a period '.' and space inside square bracket to capture period and space after a word
     result = re.search(r"^([\w \.-]*), ([\w \.-]*)", name)
     return name if not result else f"{result[2]} {result[1]}"
@@ -12,6 +12,7 @@ def rearrange_name(name):
 # - names with abbreviated middle names
 # - names with one middle name
 # - names with more than one middle name
+
 
 name_list = [
     "Hodson, Lauren K.",
@@ -31,6 +32,10 @@ name_list = [
     "Pearson, Osborn K."
 ]
 
+for name in name_list:
+    print(rearrange_name(name))
+
+
 # Expected result:
 
 # Lauren K. Hodson
@@ -48,6 +53,3 @@ name_list = [
 # Merlin A. K. Pottinger
 # Ezra Reeves
 # Osborn K. Pearson
-
-for name in name_list:
-    print(rearrange_name(name))
